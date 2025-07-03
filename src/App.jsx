@@ -1,6 +1,8 @@
 import React from 'react'
 import Router from './Router'
 import Navbar from './components/Navbar'
+import Jobstore from './components/job/Jobstore'
+
 
 
 
@@ -16,8 +18,9 @@ const App = () => {
   // ]
   return (
     <>
-    <Navbar/>
-    <Router></Router>
+    {/* <Navbar/>
+    <Router></Router> */}
+    <Jobstore></Jobstore>
     
     </>
   )
