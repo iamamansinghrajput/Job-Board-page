@@ -1,24 +1,34 @@
 import React from 'react';
 
-const Jobbox = () => {
+const Jobbox = ({ data }) => {
+  const { title, company, location, category, description } = data;
+
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 max-w-md mx-auto border border-t-4 border-gray-200">
+    <div className="bg-white rounded-xl shadow-sm p-6 w-full max-w-md mx-auto border border-gray-200 hover:shadow-md transition duration-200">
+      {/* Job Title & Category */}
       <div className="flex justify-between items-start">
-        <h2 className="text-xl font-semibold text-gray-900">Frontend Developer</h2>
-        <span className="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">
-          Engineering
+        <div>
+          <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
+          <p className="text-sm text-gray-500">{company}</p>
+        </div>
+        <span className="bg-blue-100 text-blue-600 text-xs font-medium px-3 py-1 rounded-full whitespace-nowrap">
+          {category}
         </span>
       </div>
 
-      <p className="text-sm text-gray-500 mt-1">Tech Corp</p>
-
-      <p className="text-gray-600 mt-3">
-        We are looking for a skilled frontend developer to join our team.
+      {/* Description */}
+      <p className="text-sm text-gray-700 mt-4 leading-relaxed">
+        {description}
       </p>
 
-      <p className="text-gray-500 text-sm mt-4">Remote</p>
+      {/* Location */}
+      <p className="text-xs text-gray-400 mt-4 italic">{location}</p>
 
-      <button className="mt-5 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md font-medium">
+      {/* Apply Button */}
+      <button
+        type="button"
+        className="mt-5 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold text-sm"
+      >
         Apply Now
       </button>
     </div>
