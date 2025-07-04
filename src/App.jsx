@@ -2,6 +2,8 @@ import React from 'react'
 import Router from './Router'
 import Navbar from './components/Navbar'
 import Jobstore from './components/job/Jobstore'
+import Login from './pages/Login'
+import Register from './pages/Register'
 
 
 
@@ -20,7 +22,8 @@ const App = () => {
     <>
     {/* <Navbar/>
     <Router></Router> */}
-    <Jobstore></Jobstore>
+    <Login></Login>
+    <Register></Register>
     
     </>
   )
