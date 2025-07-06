@@ -37,7 +37,6 @@ const Jobstore = () => {
 
   return (
     <section className="px-4 py-8 max-w-6xl mx-auto">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Latest Job Openings</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {arr.map((item, index) => (
