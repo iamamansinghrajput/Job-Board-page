@@ -22,10 +22,10 @@ const App = () => {
     <>
     {/* <Navbar/>
     <Router></Router> */}
-    {/* <Login></Login>
-    <Register></Register> */}
-    {/* <Applicationstore></Applicationstore> */}
+    <Login></Login>
+    <Register></Register>
     <Jobstore></Jobstore>
+
     </>
   )
 }
