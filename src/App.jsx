@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import Jobstore from './components/job/Jobstore'
 import Login from './pages/Login'
 import Register from './pages/Register'
-
+import Applicationstore from './components/Myapplication.jsx/applicationstore'   
 
 
 
@@ -25,7 +25,7 @@ const App = () => {
     <Login></Login>
     <Register></Register>
     <Jobstore></Jobstore>
-    
+
     </>
   )
 }
