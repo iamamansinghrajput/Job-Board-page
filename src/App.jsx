@@ -24,6 +24,7 @@ const App = () => {
     <Router></Router> */}
     <Login></Login>
     <Register></Register>
+    <Jobstore></Jobstore>
     
     </>
   )
