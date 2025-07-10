@@ -23,8 +23,8 @@ const Router = () => {
             <Route path="/register" element={<Register/>}/>
             <Route path="/about" element={<About/>}/>
             <Route path="/jobs" element={<Jop/>}/>
-            <Route path="/myApplications" element={<Myapplication/>}/>
-            <Route path="/application" element={<Application/>}/>
+            <Route path="/application/:jobId" element={<Application />} />
+            <Route path="/myApplications" element={<Myapplication />} />
             <Route path="/admin" element={<Admin/>}/>
             <Route path="/viewapplyer" element={<Viewapplyer/>}/>
             <Route path="/editjop" element={<EditJob/>}/>

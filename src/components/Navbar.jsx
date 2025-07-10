@@ -49,7 +49,7 @@ useEffect(() => {
                 <a href="/admin" className="font-bold text-gray-700 hover:text-blue-600">Admin</a>
               )}
               {user.role === 'user' && (
-                <a href="/myApplivation" className="font-bold text-gray-700 hover:text-blue-600">My Applications</a>
+                <a href="/myApplications" className="font-bold text-gray-700 hover:text-blue-600">My Applications</a>
               )}
               <button className="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700">Logout</button>
             </>

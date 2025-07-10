@@ -4,10 +4,10 @@ import JobTable from '../components/admin/JobTable'
 
 const Admin = () => {
   return (
-    <>
+    <div className='bg-[#f8fbff]'>
     <Topadmin/>
     <JobTable/>
-    </>
+    </div>
   )
 }
 
