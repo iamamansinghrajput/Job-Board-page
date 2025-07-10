@@ -1,4 +1,4 @@
-export const baseurl="https://jop-board.vercel.app";
+export const baseurl="http://localhost:3000";
 
 
 // `${gaseurl}/api/endpoint`
