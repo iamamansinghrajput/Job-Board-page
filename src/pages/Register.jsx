@@ -1,11 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
+import {baseurl} from '../config/path'
 
 const Register = () => {
+
+  const [formData, setFormData] = useState({
+    userName: "",
+    firstName: "",
+    lastName:"",
+    email: "",
+    password: "",
+    number: "",
+    dob: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+       async function senduserdb (formData){
+            try {
+               const response = await fetch(`${baseurl}/api/register`, {
+                method: "POST",
+                credentials: 'include', 
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+              });
+
+                const data= await response.json();
+                if (response.ok){
+                    console.log("register is succesfull");
+                    alert("registration succesfull");
+                }
+                else{
+                    console.log(data.message||"register failed");
+                }
+                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+
+
+   const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    senduserdb(formData);
+  };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="mt-8 min-h-screen flex items-center justify-center bg-[#f8fbff]">
       <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Register</h2>
-        <form id="registerForm" className="space-y-4">
+        <form id="registerForm" className="space-y-4 " onSubmit={handleSubmit} >
           
           {/* Username */}
           <div>
@@ -14,6 +63,8 @@ const Register = () => {
               type="text"
               id="userName"
               name="userName"
+              value={formData.userName}
+            onChange={handleChange}
               required
               className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
@@ -26,6 +77,8 @@ const Register = () => {
               type="text"
               id="firstName"
               name="firstName"
+              value={formData.firstName}
+            onChange={handleChange}
               required
               className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
@@ -38,6 +91,9 @@ const Register = () => {
               type="text"
               id="lastName"
               name="lastName"
+              value={formData.lastName}
+            onChange={handleChange}
+              required
               className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
           </div>
@@ -49,6 +105,8 @@ const Register = () => {
               type="email"
               id="email"
               name="email"
+              value={formData.email}
+            onChange={handleChange}
               required
               className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
@@ -61,6 +119,8 @@ const Register = () => {
               type="password"
               id="password"
               name="password"
+              value={formData.password}
+            onChange={handleChange}
               required
               className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
@@ -73,6 +133,8 @@ const Register = () => {
               type="number"
               id="number"
               name="number"
+              value={formData.number}
+            onChange={handleChange}
               required
               className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
@@ -85,6 +147,8 @@ const Register = () => {
               type="date"
               id="dob"
               name="dob"
+              value={formData.dob}
+            onChange={handleChange}
               required
               className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />

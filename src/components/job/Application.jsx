@@ -2,7 +2,7 @@ import React from 'react';
 
 const Application = () => {
   return (
-    <div className="max-w-xl mx-auto bg-white rounded-lg shadow p-6 border border-gray-300">
+    <div className="mt-8 max-w-xl mx-auto bg-white rounded-lg shadow p-6 border border-gray-300 ">
       <a href="/jobs" className="text-sm text-blue-600 flex items-center mb-4 hover:underline">
         ← Back to Jobs
       </a>

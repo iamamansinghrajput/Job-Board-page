@@ -25,12 +25,12 @@ const Jobbox = ({ data }) => {
       <p className="text-xs text-gray-400 mt-4 italic">{location}</p>
 
       {/* Apply Button */}
-      <button
-        type="button"
-        className="mt-5 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold text-sm"
+     <a href="/application" // Replace with your route
+      className="mt-5 w-full block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold text-sm"
       >
-        Apply Now
-      </button>
+      Apply Now
+     </a>
+
     </div>
   );
 };

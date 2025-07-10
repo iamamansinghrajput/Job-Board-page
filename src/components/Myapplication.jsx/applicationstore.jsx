@@ -28,14 +28,8 @@ const Applicationstore = () => {
   const [user, setuser] = useState(applications);
 
   return (
-    <section className="bg-[#f8fbff] min-h-screen py-16 px-4">
-      <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">
-        My Applications
-      </h2>
-      <p className="text-center text-gray-600 mb-10">
-        Track the status of your job applications.
-      </p>
-
+    <section className="min-h-screen px-4">
+      
       <div className="space-y-4">
         {user.map((item, index) => (
           <Applicationbox key={index} data={item} />
