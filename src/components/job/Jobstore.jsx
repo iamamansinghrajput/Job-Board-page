@@ -8,7 +8,7 @@ const Jobstore = () => {
 
   const jobStore = async () => {
     try {
-      const response = await fetch(`${baseurl}/api/getAllJob/:id`, {
+      const response = await fetch(`${baseurl}/api/getAllJob`, {
         method: "GET",
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' }

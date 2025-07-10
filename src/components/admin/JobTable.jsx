@@ -1,14 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaEllipsisV, FaEdit, FaTrash, FaUserFriends } from 'react-icons/fa';
+import { baseurl } from '../../config/path';
 
 //jopData
 const JobTable = () => {
-  const jobData = [
-    { title: 'Frontend Developer', company: 'Tech Corp', category: 'Engineering', location: 'Remote' },
-    { title: 'UI Designer', company: 'Design Co', category: 'Design', location: 'Onsite' },
-    { title: 'Frontend Developer', company: 'Tech Corp', category: 'Engineering', location: 'Remote' },
-    { title: 'UI Designer', company: 'Design Co', category: 'Design', location: 'Onsite' },
-  ];
+  const [ jobdata,jobData]=useState([]);
+  const fetchjobs = async ()=>{
+    try {
+        const response = await fetch(`${baseurl}/api/getAdminJobs`, {
+        method: "GET",
+        credentials: 'include',
+        headers: { "Content-Type": "application/json" },
+        });
+      const data = await response.json();
+      if(response.ok){
+          jobData(data);
+      }
+    } catch (error) {
+      console.error("Error creating job:", error);
+    }
+  }
+  useEffect(()=>{
+      fetchjobs();
+  },[]);
 
   const [dropdownIndex, setDropdownIndex] = useState(null);
   const dropdownRef = useRef(null);
@@ -42,7 +56,7 @@ const JobTable = () => {
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-100 relative">
-          {jobData.map((job, index) => (
+          {jobdata.map((job, index) => (
             <tr key={index} className="hover:bg-gray-50 relative">
               <td className="px-6 py-4 font-semibold text-black">{job.title}</td>
               <td className="px-6 py-4">{job.company}</td>
